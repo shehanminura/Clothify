@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="565.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Dashboard.EmployeeDashbord">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="565.0" layoutX="-2.0" stroke="#cea608" strokeType="INSIDE" strokeWidth="0.0" width="210.0" />
+      <ImageView fitHeight="207.0" fitWidth="210.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/db42d987c88dc2ebab3898e042bbf882.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="72.0" layoutX="208.0" stroke="BLACK" strokeType="INSIDE" width="638.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="359.0" layoutY="15.0" prefHeight="42.0" prefWidth="315.0" text="Employee Dashbord" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS Bold" size="30.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="20.0" layoutY="236.0" onAction="#btnItemOnAction" prefHeight="38.0" prefWidth="171.0" style="-fx-background-color: white;" text="Add Item">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="20.0" layoutY="285.0" onAction="#btnSupplierOnAction" prefHeight="38.0" prefWidth="171.0" style="-fx-background-color: white;" text="Add Supplier">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="17.0" layoutY="340.0" onAction="#btnOrderOnAction" prefHeight="38.0" prefWidth="171.0" style="-fx-background-color: white;" text="Order">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="36.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/addItem.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="25.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/orderimg.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="17.0" layoutY="392.0" onAction="#btnOrderDetailsOnAction" prefHeight="38.0" prefWidth="171.0" style="-fx-background-color: white;" text="Order Details">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="23.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/order_Details.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="25.0" layoutY="484.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/Reports.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="210.0" layoutY="72.0" prefHeight="456.0" prefWidth="596.0">
+         <children>
+            <AnchorPane fx:id="loadContentEmployee" prefHeight="489.0" prefWidth="632.0" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="25.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/Supplier.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="38.0" layoutY="485.0" onAction="#btnLogoutOnAction" prefHeight="47.0" prefWidth="136.0" style="-fx-background-color: white;" text="Logout">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/logout.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

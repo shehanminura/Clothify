@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loadContentAdmin" prefHeight="489.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Admin.AdminFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="83.0" layoutX="-10.0" stroke="BLACK" strokeType="INSIDE" width="659.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="21.0" prefHeight="42.0" prefWidth="271.0" text="Admin Form" textFill="#f1c40f">
+         <font>
+            <Font name="Comic Sans MS Bold" size="30.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblAdmin" layoutX="14.0" layoutY="97.0" prefHeight="377.0" prefWidth="365.0">
+         <columns>
+            <TableColumn fx:id="colid" prefWidth="70.0" text="Admin Id" />
+            <TableColumn fx:id="colName" prefWidth="97.33331298828125" text="Name" />
+            <TableColumn fx:id="colEmail" prefWidth="106.66665649414062" text="Email" />
+            <TableColumn fx:id="colPassword" prefWidth="88.66668701171875" text="Password" />
+         </columns>
+      </TableView>
+      <JFXTextField fx:id="txtid" focusColor="BLACK" layoutX="405.0" layoutY="129.0" prefHeight="30.0" prefWidth="193.0" unFocusColor="#f1c40f" />
+      <Label layoutX="405.0" layoutY="110.0" text="Admin ID" />
+      <Label layoutX="405.0" layoutY="174.0" text="Name" />
+      <JFXTextField fx:id="txtName" focusColor="BLACK" layoutX="405.0" layoutY="193.0" prefHeight="30.0" prefWidth="193.0" unFocusColor="#f1c40f" />
+      <Label layoutX="405.0" layoutY="301.0" text="Password" />
+      <JFXTextField fx:id="txtEmail" focusColor="BLACK" layoutX="405.0" layoutY="257.0" prefHeight="30.0" prefWidth="193.0" unFocusColor="#f1c40f" />
+      <Label layoutX="405.0" layoutY="236.0" text="Email" />
+      <JFXTextField fx:id="txtPassword" focusColor="BLACK" layoutX="405.0" layoutY="323.0" prefHeight="30.0" prefWidth="193.0" unFocusColor="#f1c40f" />
+      <JFXButton layoutX="413.0" layoutY="378.0" onAction="#btnAddAdOnAction" prefHeight="17.0" prefWidth="83.0" style="-fx-background-color: #f1c40f;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="514.0" layoutY="378.0" onAction="#btnUpdateAdOnAction" prefHeight="17.0" prefWidth="83.0" style="-fx-background-color: #f1c40f;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="413.0" layoutY="431.0" onAction="#btnSeartchAdOnAction" prefHeight="17.0" prefWidth="83.0" style="-fx-background-color: #f1c40f;" text="Seartch" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="514.0" layoutY="430.0" onAction="#btnDeleteAdOnAction" prefHeight="17.0" prefWidth="83.0" style="-fx-background-color: #f1c40f;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

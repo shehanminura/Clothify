@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="LandRAnchor" prefHeight="484.0" prefWidth="405.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.login.loginControllerFormAdmin">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000005c" height="69.0" layoutX="18.0" layoutY="37.0" stroke="WHITE" strokeType="INSIDE" width="369.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="66.0" layoutY="50.0" prefHeight="42.0" prefWidth="273.0" text="Admin Login Form" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="162.0" prefHeight="27.0" prefWidth="79.0" text="Email - " textFill="#fdfdfd">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtEmail" focusColor="WHITE" layoutX="136.0" layoutY="157.0" prefHeight="36.0" prefWidth="242.0" promptText="Enter Email" unFocusColor="#f1c40f">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="35.0" layoutY="242.0" prefHeight="27.0" prefWidth="91.0" text="Password - " textFill="#fdfdfd">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtPassword" focusColor="WHITE" layoutX="136.0" layoutY="228.0" prefHeight="36.0" prefWidth="242.0" promptText="Enter Password" unFocusColor="#f1c40f">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton layoutX="138.0" layoutY="332.0" onAction="#btnLoginOnAction" prefHeight="38.0" prefWidth="129.0" style="-fx-background-color: white;" text="Login">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/submit_img.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

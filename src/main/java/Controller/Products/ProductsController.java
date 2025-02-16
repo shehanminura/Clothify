@@ -1,10 +1,12 @@
 package Controller.Products;
 
 import DBConnection.DBConnection;
+import Model.OrderDetail;
 import Model.products;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -94,5 +96,29 @@ public class ProductsController implements ProductServies {
             list.add(products.getProductID());
         });
         return list;
+    }
+
+    public boolean updateproduct(List<OrderDetail> orderDetails) throws SQLException {
+    for (OrderDetail orderDetail :orderDetails){
+        boolean isUpdateStock = updateproducts(orderDetail);
+        if (isUpdateStock){
+            return false;
+        }
+    }
+        return true;
+    }
+
+    private boolean updateproducts(OrderDetail orderDetail) {
+    String SQL = "UPDATE PRODUCTS SET Quantity = Quantity-? WHERE ProductID = ?";
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement psTm = connection.prepareStatement(SQL);
+            psTm.setObject(1,orderDetail.getQuantity());
+            psTm.setObject(2,orderDetail.getOrderID());
+            return psTm.executeUpdate()>0;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

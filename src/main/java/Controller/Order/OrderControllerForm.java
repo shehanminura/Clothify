@@ -3,9 +3,12 @@ package Controller.Order;
 import Controller.Employee.EmployeeController;
 import Controller.Products.ProductsController;
 import Model.CartTM;
+import Model.OrderDetail;
+import Model.order;
 import Model.products;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import com.mysql.cj.x.protobuf.MysqlxCrud;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -27,7 +30,9 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class OrderControllerForm implements Initializable {
@@ -201,9 +206,37 @@ public class OrderControllerForm implements Initializable {
     }
 
     @FXML
-    void PlaceOrderOnAction(ActionEvent event) {
+    void PlaceOrderOnAction(ActionEvent event)  {
+        String productId = cmdProductsId.getValue().toString();
+        String employeeid = cmdEmployeeid.getValue().toString();
+        String totalCost = lblNetTotal.getText();
+        String date = lblDate.getText();
 
-    }
+        List<OrderDetail> orderDetails = new ArrayList<>();
+        cartTMObservableList.forEach( cartTM -> {
+            orderDetails.add(new OrderDetail(
+               txtOrderId.getText(),
+               cartTM.getItemid(),
+               cartTM.getQtyOnHande(),
+               cartTM.getTotal()
+            ));
+        });
+
+
+        try {
+            boolean placed = new OrderController().placeOrder(new order(productId,employeeid,totalCost,date,orderDetails));
+            if (placed){
+                new Alert(Alert.AlertType.INFORMATION,"Order Placed").show();
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Order Not Placed").show();
+            }
+            lblNetTotal.setText("0.00");
+            tblCart.getItems().clear();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+   }
 
 
 }
